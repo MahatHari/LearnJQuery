@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> My first jQuery example program</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            let id = $("h2").attr("id");
+            $("#id_div").text(id);
+
+            $("#imgid").attr("src", "altimage.png");
+
+            $("button").click(function () {
+                $("h1").attr("align", "center");
+            })
+            $("h1").addClass("font");
+            $("#h2id").addClass("highlight")
+        });
+    </script>
+    <style>
+        .font {
+            color: green
+        }
+
+        .highlight {
+            background: yellow
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 title=" Title attribute of  < h1 > element ">This is first Heading.</h1>
+        <h2 id=" Id attribute of  < h2 > element ">This is second Heading.</h2>
+        <div id="id_div"></div>
+    </div>
+
+    <div>
+        <img src="image.png" alt="Image not available" id="imgid" />
+        <div id="divid"></div>
+    </div>
+
+    <div>
+        <h1 align="left" title="Title attribute of h1"> This is first Heading</h1>
+        <h2 id="h2id">This is second Heading</h2>
+        <button>Set the align attribute of the tag to center</button>
+        <div id="id_div2"></div>
+    </div>
+    <div>
+        <h3>Attribute Methods of jQuerry</h3>
+        <p>
+            <strong>attr(properties)</strong> sets attribute value to all matched elements
+            <code>$("img").attr({alt:"Image not available", src:"img.png", title:"Image jQuery"});</code>
+        </p>
+        <p>
+            <strong>attr(key, fn) </strong> sets a sing attribute or property to a value
+            <code>$("h1").attr("align", "center");</code>
+        </p>
+        <p>
+            <strong>removeAttr(name)</strong> removes an attribute from all matched elements.
+            <code>$("h1").removeAttr("align", "center")</code>
+
+        </p>
+        <p>
+            <strong>hasClass(Class</strong> find a specified CSS class is applied on any one of the matched elements, if
+            yes, then it returns true otherwise false
+            <code>$("p#ptagid").hasClass("font")</code>
+        </p>
+        <p>
+            <strong>addClass(class)</strong> used on elements to apply the specified class if it is not applied
+            <code>$("h1").addClass("font")</code>
+        </p>
+        <p>
+            <strong>removeClass(class)</strong> used on elements to remove specified classes or class
+            <code>$("h1").removeClass("font")</code>
+        </p>
+        <p>
+            <strong>html()</strong> to get first html tag or matched element
+            <code>$("h1").html();</code>
+        </p>
+        <p>
+            <strong>text()</strong> to get text contents of all matched elements except form and input elements
+            <code>$("#id_div").text(title)</code>
+        </p>
+        <p>
+            <strong>val()</strong> to get the value of input from the first matched element
+            <code>$("#inputid").val();</code>
+        </p>
+    </div>
+</body>
+
+</html>
