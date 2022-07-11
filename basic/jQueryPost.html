@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#jQuerybutton').click(function () {
+                // request URL
+                $.post('/jquery/submitData',
+                    // data submitted to POST request
+                    { myData: 'Data has been sent successfully using jQuery POST' },
+                    // callback function on success
+                    function (data, status, jqXHR) {
+                        $('p').append('sent status: ' + status + ', data sent: ' + data);
+                    });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1> jQuery post() method with a simple click function
+    </h1>
+    <input type="button" id="jQuerybutton" value="POST your request here" />
+    <p>
+    </p>
+</body>
+
+</html>

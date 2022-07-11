@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#id1").click(function () {
+                let fruits = ["Apple", "Banana", "Orange", "Mango", "Cherry"];
+                $("h3").text(fruits);
+            });
+            $("#id2").click(function () {
+                let fruits = ["Apple", "Banana", "Orange", "Mango", "Cherry"];
+                let jFruits = JSON.stringify(fruits);
+                $("h2").text(jFruits);
+            })
+
+            $("#id3").click(function () {
+                let sub = { "Subject1": "English", "Subject2": "Hindi", "Subject3": "Maths" };
+                let jsub = JSON.stringify(sub, function (key, value) {
+                    if (key) {
+                        return value.toUpperCase();
+                    } else {
+                        return value;
+                    }
+                })
+                $("#h2-3").text(jsub);
+            })
+            $("#id4").click(function () {
+                let jsub = JSON.stringify({ "Date": new Date(2020, 11, 2, 15, 4, 5) }, null, "This is space");
+                console.log(jsub)
+                $("#h2-4").text(jsub);
+            })
+
+            $("#id5").click(function () {
+                let jsub = JSON.stringify({ "Date": new Date(2020, 11, 2, 15, 4, 5) }, null, 10);
+                $("#h2-4").text(jsub)
+            })
+
+            $("#id6").click(function () {
+                document.getElementById("disp").innerHTML = "<br>" + $("p").length;
+            })
+
+
+        })
+
+    </script>
+</head>
+
+<body>
+
+    <h1>Example for the JQuery JSON stringify() method.</h1>
+    <p>
+        Click below butoon to show object :
+    </p>
+    <button id="id1">Get Object </button>
+    <h3></h3>
+    <p>Click below button to show conversion string of an object</p>
+    <button id="id2">Get JON string of an object</button>'
+    <h2></h2>
+    <hr />
+    <div>
+        <h3>Example for the jQuery JSON stringify() method with Function</h3>
+        <p>
+            Click below button to show conversion string of an Object:
+        </p>
+
+        <button id="id3">
+            Get JSON string of an Object with function conversion
+        </button>
+        <h2 id="h2-3" style="background-color: red;"></h2>
+    </div>
+    <hr />
+    <div>
+        <h3>Example for the JQuery JSON stringify() method with space: </h3>
+        <p>Click below button to show conversion string of an object: </p>
+
+        <button id="id4">Get JSON String of an Object with indent string</button>
+        <button id="id5">Get JSON string of an Object with indent number</button>
+        <h2 style="background-color: red;" id="h2-4"></h2>
+    </div>
+
+    <hr>
+    <h2>Working of jQuery Lenght Property</h2>
+    <div>
+        <p style="color:blue"> This is the first paragraph </p>
+        <p style="color:blue"> This is the second paragraph </p>
+        <p style="color:blue"> This is the third paragraph </p>
+        <p style="color:blue"> This is the fourth paragraph </p>
+        <button id="id6">Click This button to get the number of "p" elements</button>
+        <div id="disp" style="color:red"></div>
+    </div>
+</body>
+
+</html>
